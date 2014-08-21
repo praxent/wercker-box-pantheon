@@ -21,6 +21,8 @@ script: |
   drush --version
 
   # Install Terminus
-  composer create-project pantheon-systems/terminus $HOME/.drush/terminus -s dev --no-dev -n
+  git clone https://github.com/pantheon-systems/terminus.git $HOME/.drush/terminus
+  cd $HOME/.drush/terminus
+  composer update --no-dev
   drush cc drush
 
